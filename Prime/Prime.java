@@ -1,9 +1,7 @@
 import java.util.*;
-class Prime{
-    public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    boolean res = true;
+class Check{
+    public static boolean  primeMethod(int n){
+        boolean res = true;
     int i =2;
        while(i<n){
         if(n%i!=0){
@@ -13,12 +11,23 @@ class Prime{
             res = false;
             i=n;
         }
-       }
-       if(res == true){
-        System.out.println("the number is prime");
-       }
-       else{
-        System.out.println("the number is not prime");
-       }
+     }
+         return res;
+    }
+}
+class Prime{
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt(); 
+    if(n>2){
+        System.out.println(Check.primeMethod(n));
+    }
+    else if(n==2){
+        System.out.println("true");
+    }
+    else{
+        System.out.println("enter correct number");
+      }
+    
     }
 }
